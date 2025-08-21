@@ -1,0 +1,20 @@
+{
+	"node": "n8n-nodes-cometapi.cometApi",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"Miscellaneous"
+	],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://api.cometapi.com/doc"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://api.cometapi.com/doc"
+			}
+		]
+	}
+}
