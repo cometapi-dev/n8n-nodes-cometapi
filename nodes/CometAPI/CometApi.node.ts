@@ -154,9 +154,6 @@ export class CometApi implements INodeType {
 		const items = this.getInputData();
 		const returnData: INodeExecutionData[] = [];
 
-		const credentials = (await this.getCredentials('cometApi')) as { apiKey: string };
-		const apiKey = credentials.apiKey;
-
 		for (let i = 0; i < items.length; i++) {
 			const model = this.getNodeParameter('model', i) as string;
 			const messages = this.getNodeParameter('messages.values', i, []) as Array<{
@@ -204,16 +201,21 @@ export class CometApi implements INodeType {
 			if (options.topP !== undefined) requestBody.top_p = options.topP;
 
 			try {
-				const response = await this.helpers.httpRequest({
-					method: 'POST',
+				const requestOptions = {
+					method: 'POST' as const,
 					url: 'https://api.cometapi.com/v1/chat/completions',
 					headers: {
-						Authorization: `Bearer ${apiKey}`,
 						'Content-Type': 'application/json',
 					},
 					body: requestBody,
 					json: true,
-				});
+				};
+
+				const response = await this.helpers.httpRequestWithAuthentication.call(
+					this,
+					'cometApi',
+					requestOptions,
+				);
 
 				returnData.push({
 					json: response,
