@@ -7,8 +7,8 @@ import {
 
 export class CometApi implements ICredentialType {
 	name = 'cometApi';
-	displayName = 'CometAPI API';
-	documentationUrl = 'https://api.cometapi.com/docs';
+	displayName = 'CometAPI';
+	documentationUrl = 'https://api.cometapi.com/doc';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'CometAPI Key',
@@ -43,10 +43,6 @@ export class CometApi implements ICredentialType {
 			baseURL: 'https://api.cometapi.com/v1',
 			url: '/chat/completions',
 			method: 'POST',
-			headers: {
-				Authorization: 'Bearer {{$credentials.apiKey}}',
-				'Content-Type': 'application/json',
-			},
 			body: {
 				model: 'gpt-4o-mini',
 				messages: [

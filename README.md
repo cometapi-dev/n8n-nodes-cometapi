@@ -41,7 +41,7 @@ To use this node, you need to authenticate with CometAPI:
 3. In n8n, create new CometAPI credentials and enter your API key
 
 ### Authentication Method
-- **API Key**: Bearer token authentication using your CometAPI API key
+- **API Key**: Bearer token authentication using your CometAPI key
 
 ## Compatibility
 
@@ -84,7 +84,7 @@ For more control over the AI responses, you can adjust:
 ## Resources
 
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/#community-nodes)
-* [CometAPI Documentation](https://api.cometapi.com/docs)
+* [CometAPI Documentation](https://api.cometapi.com/doc)
 * [CometAPI Console](https://api.cometapi.com/console/token)
 
 ## License
