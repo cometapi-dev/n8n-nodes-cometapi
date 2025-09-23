@@ -7,7 +7,7 @@ import {
 
 export class CometApi implements ICredentialType {
 	name = 'cometApi';
-	displayName = 'CometAPI';
+	displayName = 'CometAPI API';
 	documentationUrl = 'https://api.cometapi.com/doc';
 	properties: INodeProperties[] = [
 		{
